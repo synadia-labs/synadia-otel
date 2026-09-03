@@ -22,7 +22,7 @@ The **docs/synadia-otel-tracing.docx** document contains details on the architec
 | docker-compose | v5.5.0 | https://docs.docker.com/compose/install/ |
 | Jaeger | v2.2.0 | https://www.jaegertracing.io/download/ | 
 
-Note: you don't need to downloads NATS server or Jaeger as the <u>docker-compose.yml</u> file will pull them automatically from DockerHub
+Note: you don't need to downloads NATS server or Jaeger as the <ins>docker-compose.yml</ins> file will pull them automatically from DockerHub
 
 ## Shared Server Harness
 
