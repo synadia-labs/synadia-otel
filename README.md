@@ -22,8 +22,6 @@ The **docs/synadia-otel-tracing.docx** document conains details on the architecr
 | docker-compose | v5.5.0 | https://docs.docker.com/compose/install/ |
 
 
-`nats-server` is downloaded automatically by the Task commands — no manual install needed.
-
 ## Shared Server Harness
 
 `server/Taskfile.yml` manages the NATS server lifecycle. The binary is fetched from `binaries.nats.dev` on first use and cached at `server/bin/`. Run these from the repo root:
