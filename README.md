@@ -7,11 +7,9 @@ There are three aspects to this:
   +  insert certain headers, that the NATS server can recognize and generate trace events
   +  include OTEL logic that will emit a client trace event
 + The **Consumer**: In the Consumer Client code, we need to extract the headers from the message, and generate a trace event.
-+ The **OTEL Exporter**: The Exporter subscribes to trace events (both client and server), converts teh NATS wire ormat into OTEL wire format, and sends the ensuing OTEL message to Jaeger for visualization.
++ The **OTEL Exporter**: The Exporter subscribes to trace events (both client and server), converts the NATS wire format into OTEL wire format, and sends the ensuing OTEL message to Jaeger for visualization.
 
-
-
-The examples provided here are designed to help one understand the various ways in which one can use AuthCallout with NATS. There are other variations to these example that are not covered here, but the current set constitutes a good foundation for anyone that wants to build AuthCallout based solutions with NATS.
+The **docs/synadia-otel-tracing.docx** document conains details on the architecrure and on how to execute the demo. 
 
 ## Prerequisites
 
