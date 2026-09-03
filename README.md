@@ -9,7 +9,7 @@ There are three aspects to this:
 + The **Consumer**: In the Consumer Client code, we need to extract the headers from the message, and generate a trace event.
 + The **OTEL Exporter**: The Exporter subscribes to trace events (both client and server), converts the NATS wire format into OTEL wire format, and sends the ensuing OTEL message to Jaeger for visualization.
 
-The **docs/synadia-otel-tracing.docx** document conains details on the architecrure and on how to execute the demo. 
+The **docs/synadia-otel-tracing.docx** document contains details on the architecture and on how to execute the demo. 
 
 ## Prerequisites
 
@@ -20,7 +20,9 @@ The **docs/synadia-otel-tracing.docx** document conains details on the architecr
 | nats-server| 2.12+| https://nats.io/download/|
 | docker |v29.7.2 |https://docs.docker.com/get-started/get-docker/| 
 | docker-compose | v5.5.0 | https://docs.docker.com/compose/install/ |
+| Jaeger | v2.2.0 | https://www.jaegertracing.io/download/ | 
 
+Note: you don't need to downloads NATS server or Jaeger as the <u>docker-compose.yml</u> file will pull them automatically from DockerHub
 
 ## Shared Server Harness
 
