@@ -15,9 +15,12 @@ The **docs/synadia-otel-tracing.docx** document conains details on the architecr
 
 | Tool | Version | Install |
 |---|---|---|
-| Go | 1.22+ | [go.dev/dl](https://go.dev/dl/) |
-| Task | any | [taskfile.dev](https://taskfile.dev) |
-| nats CLI | 0.3+ | `go install github.com/nats-io/natscli/nats@latest` |
+| Java | jdk 23 + | https://openjdk.org/install/ |
+| maven|3.9.9+|https://maven.apache.org/download.cgi|
+| nats-server| 2.12+| https://nats.io/download/|
+| docker |v29.7.2 |https://docs.docker.com/get-started/get-docker/| 
+| docker-compose | v5.5.0 | https://docs.docker.com/compose/install/ |
+
 
 `nats-server` is downloaded automatically by the Task commands — no manual install needed.
 
