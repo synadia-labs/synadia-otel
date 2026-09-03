@@ -1,4 +1,4 @@
-# NATS Topic Demos
+# NATS Open Telemetery (OTeL) example
 
 Runnable demos for NATS JetStream features, backed by a self-contained local server harness. Each demo lives under `cmd/` and ships with a CLI walkthrough and a Go program.
 
