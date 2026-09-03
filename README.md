@@ -3,9 +3,11 @@
 The aim of this project is to illustrate how to make the native NATS tracing capabilities compatible with Open Telemetry.
 
 There are three aspects to this:
-+ The Producer
-+ The Consumer
-+ The OTEL Exporter
++ The Producer: In the Producer client code we need to:
+  +  insert certain headers, that the NATS server can recognize and generate trace events
+  +  include OTEL logic that will emit a client trace event
++ The Consumer: In the Consumer Client code, we need to extract the headers from the message, and generate a trace event.
++ The OTEL Exporter: The Exporter subscribes to trace events (both client and server), converts teh NATS wire ormat into OTEL wire format, and sends the ensuing OTEL message to Jaeger for visualization.
 
 
 
