@@ -1,0 +1,10 @@
+io/synadia/otel/NatsTracingSubscriber.class
+io/synadia/otel/model/SpanEventModel.class
+io/synadia/otel/NatsTracer$Builder.class
+io/synadia/otel/model/SpanEnvelope.class
+io/synadia/otel/propagation/NatsHeaderSetter.class
+io/synadia/otel/exporter/NatsSpanExporter.class
+io/synadia/otel/NatsTracer.class
+io/synadia/otel/TracingConfig.class
+io/synadia/otel/propagation/NatsHeaderGetter.class
+io/synadia/otel/NatsTracingPublisher.class

@@ -1,0 +1,9 @@
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/client-lib/src/main/java/io/synadia/otel/NatsTracer.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/client-lib/src/main/java/io/synadia/otel/NatsTracingPublisher.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/client-lib/src/main/java/io/synadia/otel/NatsTracingSubscriber.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/client-lib/src/main/java/io/synadia/otel/TracingConfig.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/client-lib/src/main/java/io/synadia/otel/exporter/NatsSpanExporter.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/client-lib/src/main/java/io/synadia/otel/model/SpanEnvelope.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/client-lib/src/main/java/io/synadia/otel/model/SpanEventModel.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/client-lib/src/main/java/io/synadia/otel/propagation/NatsHeaderGetter.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/client-lib/src/main/java/io/synadia/otel/propagation/NatsHeaderSetter.java

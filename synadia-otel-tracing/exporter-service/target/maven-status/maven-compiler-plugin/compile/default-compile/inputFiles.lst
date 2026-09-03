@@ -1,0 +1,8 @@
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/exporter-service/src/main/java/io/synadia/otel/exporter/ClientSpanCollector.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/exporter-service/src/main/java/io/synadia/otel/exporter/ExporterConfig.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/exporter-service/src/main/java/io/synadia/otel/exporter/Main.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/exporter-service/src/main/java/io/synadia/otel/exporter/OtlpForwarder.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/exporter-service/src/main/java/io/synadia/otel/exporter/ReconstitutedSpanData.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/exporter-service/src/main/java/io/synadia/otel/exporter/ServerTraceConverter.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/exporter-service/src/main/java/io/synadia/otel/exporter/ServerTraceEventCollector.java
+/Users/brunobaloi/Synadia/Synadia_Projects/CodeRepository/Java/synadia-otel-tracing/exporter-service/src/main/java/io/synadia/otel/exporter/model/MsgTraceEvent.java

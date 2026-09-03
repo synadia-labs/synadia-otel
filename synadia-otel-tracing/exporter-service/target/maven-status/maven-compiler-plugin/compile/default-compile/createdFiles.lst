@@ -1,0 +1,13 @@
+io/synadia/otel/exporter/ServerTraceConverter$TraceIds.class
+io/synadia/otel/exporter/ServerTraceConverter.class
+io/synadia/otel/exporter/model/MsgTraceEvent$ServerInfo.class
+io/synadia/otel/exporter/model/MsgTraceEvent$TraceRecord.class
+io/synadia/otel/exporter/model/MsgTraceEvent.class
+io/synadia/otel/exporter/model/MsgTraceEvent$MsgTraceRequest.class
+io/synadia/otel/exporter/Main.class
+io/synadia/otel/exporter/ExporterConfig.class
+io/synadia/otel/exporter/ReconstitutedSpanData$Builder.class
+io/synadia/otel/exporter/ReconstitutedSpanData.class
+io/synadia/otel/exporter/ServerTraceEventCollector.class
+io/synadia/otel/exporter/ClientSpanCollector.class
+io/synadia/otel/exporter/OtlpForwarder.class
