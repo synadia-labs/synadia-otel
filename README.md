@@ -1,6 +1,15 @@
 # NATS Open Telemetery (OTeL) example
 
-Runnable demos for NATS JetStream features, backed by a self-contained local server harness. Each demo lives under `cmd/` and ships with a CLI walkthrough and a Go program.
+The aim of this project is to illustrate how to make the native NATS tracing capabilities compatible with Open Telemetry.
+
+There are three aspects to this:
++ The Producer
++ The Consumer
++ The OTEL Exporter
+
+
+
+The examples provided here are designed to help one understand the various ways in which one can use AuthCallout with NATS. There are other variations to these example that are not covered here, but the current set constitutes a good foundation for anyone that wants to build AuthCallout based solutions with NATS.
 
 ## Prerequisites
 
