@@ -11,6 +11,9 @@ There are three aspects to this:
 
 The **docs/synadia-otel-tracing.docx** document contains details on the architecture and on how to execute the demo. 
 
+![image](docs/OTEL_NATS_1.png)
+
+
 ## Prerequisites
 
 | Tool | Version | Install |
