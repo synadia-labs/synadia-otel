@@ -24,26 +24,6 @@ The **docs/synadia-otel-tracing.docx** document contains details on the architec
 
 Note: you don't need to downloads NATS server or Jaeger as the <ins>docker-compose.yml</ins> file will pull them automatically from DockerHub
 
-## Shared Server Harness
-
-`server/Taskfile.yml` manages the NATS server lifecycle. The binary is fetched from `binaries.nats.dev` on first use and cached at `server/bin/`. Run these from the repo root:
-
-```bash
-task server:single       # single-node JetStream (port 4222)
-task server:cluster      # 3-node JetStream cluster (ports 4222–4224)
-task server:super        # supercluster: 3 clusters × 3 nodes + 7 leaf nodes (16 servers)
-
-task server:stop         # stop all running servers and wipe data
-task server:status       # health check all known endpoints
-
-task server:reset:single   # wipe + restart single-node
-task server:reset:cluster  # wipe + restart 3-node cluster
-task server:reset:super    # wipe + restart supercluster
-```
-
-After starting, a NATS CLI context is saved and selected so `nats` commands work without a `--server` flag.
-
-Demos that need their own server topology (e.g. specific ports or JetStream domains) include their own `Taskfile.yml` and `conf/` — see the demo's README for details.
 
 ## Demos
 
