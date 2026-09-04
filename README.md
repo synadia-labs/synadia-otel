@@ -29,9 +29,7 @@ Note: you don't need to downloads NATS server or Jaeger as the <ins>docker-compo
 
 | Demo | Topic | Docs |
 |---|---|---|
-| [`async-stream-flushing`](cmd/async-stream-flushing/) | JetStream async stream flushing — KubeCon benchmarks (sync vs async, R1 vs R3) | [README](cmd/async-stream-flushing/kubecon/README.md) |
-| [`delayed-message-scheduling`](cmd/delayed-message-scheduling/) | JetStream Message Scheduler — deferred and recurring delivery | [README](cmd/delayed-message-scheduling/cli-demos/README.md) |
-| [`distributed-counter-crdt`](cmd/distributed-counter-crdt/) | JetStream distributed counter streams — CLI walkthrough and cross-domain CRDT convergence | [CLI](cmd/distributed-counter-crdt/cli-demos/README.md) · [Go](cmd/distributed-counter-crdt/crdt-convergence/README.md) |
+|  General tracing + OTEL export| use a Lef Node - Hub node configuration; publish on Leaf node, consume on Hub node - trace interaction | docs/synadia-otel-tracing.docx, Demo chapter |
 
 ## Repo Layout
 
