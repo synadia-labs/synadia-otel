@@ -34,25 +34,62 @@ Note: you don't need to downloads NATS server or Jaeger as the <ins>docker-compo
 ## Repo Layout
 
 ```
-cmd/
-  async-stream-flushing/
-    kubecon/                    # bench scripts, HTML visualizers, conf
-  delayed-message-scheduling/
-    cli-demos/                  # step-by-step CLI walkthrough + quick reference
-    go-demos/                   # Go demo
-  distributed-counter-crdt/
-    cli-demos/                  # CLI walkthrough + quick reference
-    crdt-convergence/           # Go demo: cross-domain CRDT convergence
-      conf/                     # east + west server configs (demo-specific)
-      Taskfile.yml              # start / stop / run / reset
-server/
-  Taskfile.yml                  # shared server lifecycle tasks (reference for per-demo Taskfiles)
-  conf/
-    shared.conf                 # shared auth / accounts config
-    single/                     # single-node config
-    cluster/                    # 3-node cluster configs
-    super/                      # supercluster + leaf node configs
-  bin/                          # downloaded nats-server binary (gitignored)
-  data/                         # JetStream store dirs (gitignored)
-  logs/                         # server logs (gitignored)
+synadia-otel-tracing/                                                                                                                                                                                              
+  │                                                                                                                                                                                                                
+  ├── pom.xml                                          — parent (Java 17, OTel BOM 1.40.0, 3 modules)                                                                                                                
+  │                                                                                                                                                                                                                  
+  ├── client-lib/                                      — library JAR for application use                                                                                                                             
+  │   ├── pom.xml                                                                                                                                                                                                    
+  │   └── src/main/                                                                                                                                                                                                
+  │       ├── java/io/synadia/otel/
+  │       │   ├── NatsTracer.java                      — entry point / builder; creates OTel SDK or noop
+  │       │   ├── NatsTracingPublisher.java            — publish/request with traceparent injection
+  │       │   ├── NatsTracingSubscriber.java           — subscribe with traceparent extraction
+  │       │   ├── TracingConfig.java                   — config loader (.properties); incl. tracing.enabled
+  │       │   ├── exporter/
+  │       │   │   └── NatsSpanExporter.java            — SpanExporter: serialises spans → JSON → NATS
+  │       │   ├── model/
+  │       │   │   ├── SpanEnvelope.java                — JSON transport model for a single span
+  │       │   │   └── SpanEventModel.java              — JSON transport model for span events
+  │       │   └── propagation/
+  │       │       ├── NatsHeaderSetter.java            — TextMapSetter over NATS Headers
+  │       │       └── NatsHeaderGetter.java            — TextMapGetter over NATS Message
+  │       └── resources/
+  │           └── tracing.properties                   — default config (nats.url, traces.subject, etc.)
+  │
+  ├── exporter-service/                                — standalone fat JAR; bridges NATS → Jaeger
+  │   ├── pom.xml
+  │   └── src/main/
+  │       ├── java/io/synadia/otel/exporter/
+  │       │   ├── Main.java                            — entry point; wires up collectors
+  │       │   ├── ExporterConfig.java                  — config loader (nats.url, subjects, jaeger.endpoint)
+  │       │   ├── ClientSpanCollector.java             — telemetry.traces → ReconstitutedSpanData → Jaeger
+  │       │   ├── ServerTraceEventCollector.java       — telemetry.server.traces → ServerTraceConverter → Jaeger
+  │       │   ├── ServerTraceConverter.java            — MsgTraceEvent JSON → OTel SpanData list
+  │       │   ├── ReconstitutedSpanData.java           — implements SpanData from SpanEnvelope
+  │       │   ├── OtlpForwarder.java                   — OtlpGrpcSpanExporter wrapper → Jaeger :4317
+  │       │   └── model/
+  │       │       └── MsgTraceEvent.java               — ADR-41 wire format (server/request/events)
+  │       └── resources/
+  │           └── config.properties                    — default config
+  │
+  ├── examples/                                        — runnable demo apps
+  │   ├── pom.xml                                      — builds producer.jar + consumer.jar
+  │   └── src/main/
+  │       ├── java/io/synadia/otel/examples/
+  │       │   ├── ProducerExample.java                 — publishes messages on leaf node
+  │       │   └── ConsumerExample.java                 — subscribes on hub node
+  │       └── resources/
+  │           └── example-tracing.properties           — fallback config for examples
+  │
+  ├── config/                                          — runtime config files (not bundled in JARs)
+  │   ├── producer-leaf.properties                     — connects to leaf :4223, server.trace.dest set
+  │   └── consumer-hub.properties                      — connects to hub :4222
+  │
+  ├── nats/                                            — NATS server config files
+  │   ├── hub.conf                                     — port 4222, leafnodes port 7422
+  │   └── leaf.conf                                    — port 4223, connects to nats-hub:7422
+  │
+  └── docker-compose.yml                               — nats-hub + nats-leaf + jaeger (all-in-one)
+
 ```
